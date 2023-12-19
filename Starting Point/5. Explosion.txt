@@ -1,0 +1,24 @@
+Starting Point 5 Explosion:
+
+RDP: Remote Desktop Protocol - Operates on 3389 TCP and 3389 UDP. Interactions can be CLI(command line) or GUI. Makes it easy to control desktop once connected. Usually for training and other help purposes.
+
+Enumerations:
+sudo nmap -sV target 
+****************************
+SpeedGuide is a
+good resource for those just starting out with their networking basics and interested in understanding more
+common ports at a glance
+****************************
+
+3389/tcp open ms-wbt-server Microsoft Terminal Services open for RDP (Searched and found on Speedguide) 
+
+sudo apt-get install freerdp2-xll (install freer)
+
+/cert:ignore : Specifies to the scrips that all security certificate usage should be
+ignored.
+/u:Administrator : Specifies the login username to be "Administrator".
+/v:{target_IP} : Specifies the target IP of the host we would like to connect to.
+Combines to :
+xfreerdp /v:10.129.151.130 /cert:ignore /u:Administrator
+
+The mismanagment has left the admin role without a password, you can login without one at all... Free will open desktop and claim flag.

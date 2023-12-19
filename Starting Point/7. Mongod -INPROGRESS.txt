@@ -1,0 +1,22 @@
+Starting Point 7 Monogod:
+
+MongoDB - document oriented NoSQL database, organized in heirarchy
+
+-Database
+-Collections
+-Documents
+
+Enumeration:
+
+nmap -p- --min-rate=1000 -sV 10.129.253.40 (-p- scans all TCP ports, min-rate speeds up scan)
+
+Two ports open: 
+
+22 ssh OpenSSH 8.2p1 Ubuntu
+27017 mongodb 3.6.8
+
+Connecting to Mongodb: --------------------------------------------------
+
+dwn tar: curl -O https://fastdl.mongodb.org/linux/mongodb-Linux-x86_64-3.4.7.tgz
+tar xvf mongodb-Linux-x86_64-3.4.7.tgz
+

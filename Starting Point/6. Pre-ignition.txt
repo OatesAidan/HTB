@@ -1,0 +1,32 @@
+Starting Point 6 Pre-Ignition: Hacking Wordpress
+
+Directory Brute-forcing: used to check a lot of paths on a web server to find hiddent pages, also known as dir bashing.
+
+sudo nmap -sV target
+80/tcp open http nginx 1.14.2 (since this is possibly a service with web pages, http, we can use the iP to find the webpage )
+
+Welcome to nginx page is then presented 
+
+Install Gobuster : sudo apt install golang-go --------------------------------------------------------
+Go enviroment ex:  go install github.com/OJ/gobuster/v3@latest
+	IF FAILS
+sudo git clone https://github.com/OJ/gobuster.git
+cd gobuster
+go get && go build
+go install
+
+gobuster -h (help cmds) 
+dir = specific directory
+-w = specify word list
+-u = specify target IP 
+
+Sudo gobuster dir -w /usr/share/wordlists/dirb/common.txt -u 10.129.219.107
+-you will see /admin.php page is present
+
+-Gobuster used the common script from git, which are common names of pages on servers that arn't accessable except direct access, making the search itself nessecary 
+
+This means we can now try the IP with this webpage or : 10.129.219.107/admin.php
+
+On the page the login admin is prompted, for this lesson no brute forcing the pass will be used, just use possibly unchanged credetials (mismanagment) 
+
+Login and find the flag
